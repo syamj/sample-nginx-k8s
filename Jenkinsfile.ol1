@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  stages {
+    stage('Apply Kubernetes Files') {
+      steps {
+          sh 'kubectl apply -f service.yaml'
+	  sh 'ssh ubuntu@172.31.18.25 
+        }
+      }
+  }
+}
+}
