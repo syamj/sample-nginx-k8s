@@ -1,12 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Deploy to K8s') {
+    stage('Apply Kubernetes Files') {
       steps {
-        withKubeConfig([credentialsId: 'kube-config']) {
-	sh kubectl apply -f nginx/*
-	}
+          withKubeConfig([credentialsId: 'kubeconfig']) {
+          sh 'cat deployment.yaml | sed "s/{{BUILD_NUMBER}}/$BUILD_NUMBER/g" | kubectl apply -f -'
+          sh 'kubectl apply -f service.yaml'
+        }
       }
-    }
   }
+}
 }
