@@ -28,7 +28,7 @@ data:
           listen       80;
           server_name  _;
           location / {
-              root   html;
+              root   /usr/share/nginx/html;
               index  index.html index.htm;
           }
       }
