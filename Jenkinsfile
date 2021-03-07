@@ -4,7 +4,7 @@ pipeline {
     stage('Apply Kubernetes Files') {
       steps {
           withKubeConfig([credentialsId: 'kubeconfig']) {
-          sh 'kubectl apply -f nginx/*'
+          sh 'kubectl apply -f nginx/'
         }
       }
   }
