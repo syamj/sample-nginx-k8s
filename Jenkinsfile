@@ -14,7 +14,7 @@ pipeline {
             script: 'kubectl apply -f nginx/nginx-cm.yaml',
             returnStdout: true
             ).trim()
-          sh echo $CM_CHANGED 
+          sh 'echo $CM_CHANGED' 
           sh 'kubectl apply -f nginx/'
 
         }
