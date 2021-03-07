@@ -40,5 +40,5 @@ spec:
           periodSeconds: 3
       volumes:
       - name: nginx-conf
-        persistentVolumeClaim:
-          claimName: nginx-conf
+        configMap:
+          name: nginx-conf
