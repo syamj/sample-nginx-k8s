@@ -27,7 +27,7 @@ spec:
           name: nginx-conf
         livenessProbe:
           httpGet:
-            path: /
+            path: /nginx-health
             port: 80
             httpHeaders:
           initialDelaySeconds: 3

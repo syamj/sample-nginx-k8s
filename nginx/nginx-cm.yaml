@@ -31,6 +31,10 @@ data:
               root   /usr/share/nginx/html;
               index  index.html index.htm;
           }
+          location /nginx-health {
+              access_log off;
+              return 200 "healthy\n";
+          }
       }
     }
 
